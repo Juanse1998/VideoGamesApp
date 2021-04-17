@@ -1,0 +1,63 @@
+
+.contengotodo {
+    padding-top: 5em;
+    margin-left: 10%;
+}
+.videojuegos {
+    padding-top: 0.5em;
+    background-color: rgb(34, 16, 85);
+    opacity: .9;
+    width: 20%;
+    height: 30%;
+    margin-left: 5%;
+    border-radius: 10px;
+
+
+}
+
+.cards{   
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: .9;
+    padding: 1em;
+    width: 100%;
+    box-sizing: content-box;
+
+ 
+}
+but{
+    display: flex;
+    align-items: center;
+
+    padding-top: 2%;
+    width: 25%;
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+}
+
+.botones{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-left: 35%;
+}
+
+.checkes{
+    display: flex;
+    width: 20%;
+    margin-left: 35%;
+
+}
+.checks{
+    height: 30%;
+    color: aqua;
+    opacity: .9;
+    width: 000%;
+}
+
+
+
+

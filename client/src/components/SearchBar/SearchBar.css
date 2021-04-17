@@ -1,0 +1,9 @@
+.buscador{
+    padding-top: 0.8%;
+    margin-left: 20%;
+}
+
+.boton2{
+    display: flex;
+    justify-items: flex-end;
+}
