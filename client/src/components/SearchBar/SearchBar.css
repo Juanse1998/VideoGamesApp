@@ -1,9 +1,40 @@
 .buscador{
-    padding-top: 0.8%;
-    margin-left: 20%;
+  padding-top: 0.8%;
+  height: 35px;
+  width: 83%;
 }
 
 .boton2{
-    display: flex;
-    justify-items: flex-end;
+  display: flex;
+  justify-items: flex-end;
+}
+
+.label {
+  margin-right: 9px;
+  padding-bottom: 4px;
+}
+
+.button {
+  width: 71px;
+  margin-left: 5px;
+  color: black;
+  background-color: #ffcc74;
+  font-size: 12px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+form {
+  padding-top: 0.8em;
+  opacity: .9;
+  border-radius: 10px;
+}
+
+.inputSearch {
+  margin-right: 5px;
+  border-radius: 9px;
+  height: 19px;
+  width: 237px;
 }

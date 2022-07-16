@@ -1,7 +1,6 @@
 export async function getAllGames() {
     const response = await  fetch(`/videogames`)
     const responseJson = await response.json()
-    console.log(responseJson)
     return responseJson
 }
 

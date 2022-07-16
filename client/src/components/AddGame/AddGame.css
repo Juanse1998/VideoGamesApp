@@ -15,18 +15,25 @@
 	width: 100%;
 }
 .inputs {
+  color: black;
 	width: 31%;
 	padding: 2%;
-	display: flex;
-	justify-content: center;
-    background-color:rgb(34, 16, 85) ;
-	flex-direction:column ;
-	align-items: unset;
+  background-color:#ffcc74 ;
 }
- 
-b{ 
-	color: aqua;
-}
+
 .bttn{
-	width: 20%;
+  margin-top: 9px
+}
+
+.name {
+  text-decoration: underline;
+  display: -webkit-inline-box;
+  margin-bottom: 12px;
+}
+
+.addGameInputs{
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 220px;
 }

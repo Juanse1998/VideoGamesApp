@@ -12,7 +12,7 @@
     height: 100%;
     float: left;
     justify-content:left;
-    background-color: #2944df;
+    background-color: #ffcc74;
     opacity: 0.9;
     display: flex;
     padding: 14px 16px;
@@ -39,7 +39,7 @@ p {
 }
 
 a {
-  color: rgb(146, 224, 243);
+  color: rgb(0, 0, 0);
 }
 .search {
   width: 25%;
@@ -54,19 +54,4 @@ a {
   padding-top: 0.8em;
 }
 
-  form {
-    width: 50%;
-    height: 40%;
-    float: right;
-    justify-content: right;
-    display: flex;
-    text-decoration: none;
-    font-size: 17px;
-    margin-right: 5em;
-    padding-top: 0.8em;
-    opacity: .9;
-    border-radius: 10px;
-    align-items: center;
 
-
-  }

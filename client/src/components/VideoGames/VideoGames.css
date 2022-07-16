@@ -1,21 +1,21 @@
 
 .contengotodo {
-    padding-top: 5em;
-    margin-left: 10%;
+  padding-top: 5em;
+  text-align: center;
 }
 .videojuegos {
     padding-top: 0.5em;
-    background-color: rgb(34, 16, 85);
+    background-color: #ffcc74;
     opacity: .9;
-    width: 20%;
+    width: 50%;
     height: 30%;
-    margin-left: 5%;
     border-radius: 10px;
-
-
+    border-style: solid;
+    border-color: black;
+    display: -webkit-inline-box;
 }
 
-.cards{   
+.cards{
     display: flex;
     flex-direction:row ;
     flex-wrap: wrap;
@@ -25,7 +25,7 @@
     width: 100%;
     box-sizing: content-box;
 
- 
+
 }
 but{
     display: flex;
@@ -39,25 +39,42 @@ but{
 }
 
 .botones{
-    display: flex;
-    align-items: center;
-    width: 50%;
-    margin-left: 35%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .checkes{
     display: flex;
-    width: 20%;
-    margin-left: 35%;
+    margin-left: 5%;
 
 }
 .checks{
+    display: inline-grid;
     height: 30%;
     color: aqua;
     opacity: .9;
     width: 000%;
 }
 
+.contCheck {
+  padding-bottom: 5px;
+  width: 115px;
+  text-align: left;
+}
 
+.textFilter{
+  padding-left: 6px;
+}
+
+.buttons {
+  color: black;
+  background-color: #ffcc74;
+  width: 80px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
 
 

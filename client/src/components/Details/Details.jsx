@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-
 import {gameDb} from '../../services/games'
 import './Details.css'
 
 export default function Details({id})  {
-  const [game, setGame] = useState(null) 
+  const [game, setGame] = useState(null)
   const [gamedb, setGamedb] = useState(null)
   const games = [];
 
@@ -16,34 +15,32 @@ export default function Details({id})  {
     setGamedb(a)
   }, []);
 
-
-
   {
     if(!game) {
       return "Loading..."
     }
   }
   {
-  
+
   }
-    return (
-      <section className="videogames-container">
-        <div className="details">
-            <div className="fechaLanz">
-                { <a> fecha lanzamiento: {game[0].released} </a> }
-            </div>
-            <div className="rating">
-                <a> rating: {game[0].rating} </a>
-            </div>
-            <div className="plataformas">
-                <a> plataformas: {game[0].platforms.toString()} </a>
-            </div>
-            <div className="description">
-              <a> descripcion: {game[0].description} </a>
-            </div>
-      </div>
-    </section>
-    )
+  return (
+    <section className="videogames-container">
+      <div className="details">
+        <div className="fechaLanz">
+            { <a> fecha lanzamiento: {game[0].released} </a> }
+        </div>
+        <div className="rating">
+            <a> rating: {game[0].rating} </a>
+        </div>
+        <div className="plataformas">
+            <a> plataformas: {game[0].platforms.toString()} </a>
+        </div>
+        <div className="description">
+          <a> descripcion: {game[0].description} </a>
+        </div>
+    </div>
+  </section>
+  )
 }
 
 // function mapStateToProps(state) {
@@ -57,4 +54,4 @@ export default function Details({id})  {
 //       getGameDetail: id => dispatch(getGameDetail(id))
 //     };
 //   }
-  
+

@@ -7,48 +7,46 @@ import SearchBar from '../SearchBar/SearchBar';
 import NavBar from '../NavBar/NavBar'
 
 export default function VideoGames() {
-  const [game, setGame] = useState([]) 
+  const [game, setGame] = useState([])
 
   const [previous, setPrevious] = useState("")
   const [next, setNext] = useState("")
 
-  
   useEffect(async () => {
-      const games = await getAllGames()
-      setGame(games);
-      console.log(games[0].next)
-      setNext(games[0].next)
-      setPrevious(games[0].previous)
-    }, [])
+    const games = await getAllGames()
+    setGame(games);
+    setNext(games[0].next)
+    setPrevious(games[0].previous)
+  }, [])
 
-    async function nextPage() {
-      await fetch(next)
-         .then (r => r.json())
-         .then((r) => {
-             const {results, next, previous} = r;
-             setGame(results);
-             setNext(next)
-             setPrevious(previous)
-         })
+  async function nextPage() {
+    await fetch(next)
+       .then (r => r.json())
+       .then((r) => {
+          const {results, next, previous} = r;
+          setGame(results);
+          setNext(next)
+          setPrevious(previous)
+       })
+  }
+
+  async function Previous() {
+    await fetch(previous)
+          .then (r => r.json())
+          .then((r) => {
+            const {results, next, previous} = r;
+            setGame(results);
+            setNext(next)
+            setPrevious(previous)
+          })
     }
 
-    async function Previous() {
-      await fetch(previous)
-            .then (r => r.json())
-            .then((r) => {
-                const {results, next, previous} = r;
-                setGame(results);
-                setNext(next)
-                setPrevious(previous)
-            })
-        }
-  
 
   async function ordRating() {
     const aux = [];
     const games = await getAllGames()
     games.map((game) => {
-      aux.push(game)  
+      aux.push(game)
     })
     aux.sort((a,b) => a.rating - b.rating);
     setGame(aux)
@@ -58,7 +56,7 @@ export default function VideoGames() {
     const aux = [];
     const games = await getAllGames()
     games.map((game) => {
-      aux.push(game)  
+      aux.push(game)
     })
     aux.sort((a,b) => {
       if(a.name > b.name) {
@@ -76,7 +74,7 @@ export default function VideoGames() {
     const aux = [];
     const games = await getAllGames()
     games.map((game) => {
-      aux.push(game)  
+      aux.push(game)
     })
     aux.sort((a,b) => {
       if(a.name < b.name) {
@@ -97,55 +95,53 @@ export default function VideoGames() {
     return (
     <>
       <NavBar/>
-        <div className="todo"> 
+        <div className="todo">
             <div className="contengotodo">
-            <div className="buscador">
-              <SearchBar />
-            </div>
-
             <div className="videojuegos">
-              <div className="checkes">    
+              <div className="checkes">
                 <div className="checks">
-                  <div>
-                    Rating
+                  <div className="contCheck">
                     <input type="checkbox" name="rating" onClick={ordRating}/>
+                    <a className="textFilter">Rating</a>
                   </div>
-                  <div>
-                    Ascendente
-                    <input type="checkbox" name="asce" onClick={ordAlfaAsc}/>  
+                  <div className="contCheck">
+                    <input type="checkbox" name="asce" onClick={ordAlfaAsc}/>
+                    <a className="textFilter">Ascendente</a>
                   </div>
-                  <div>
-                    Descendente
+                  <div className="contCheck">
                     <input type="checkbox" name="desc" onClick={ordAlfaDesc}/>
+                    <a className="textFilter">Descendente</a>
                   </div>
                 </div>
               </div>
-               
+              <div className="buscador">
+                <SearchBar />
+              </div>
             </div>
             <div className="botones">
                   <div className="anterior">
-                    <p> <button className="anter" onClick={Previous}> Anterior  </button> </p>
+                    <p><button className="buttons" onClick={Previous}>Anterior</button></p>
                   </div>
-                  <div>
-                    <p>  <button clasName="sig" onClick={nextPage}> Siguiente  </button> </p> 
+                  <div className="anterior">
+                    <p><button className="buttons" onClick={nextPage}>Siguiente</button></p>
                   </div>
                 </div>
 
             </div>
           </div>
-             
+
           <div className="cards">
-          
+
           {
-            game.map((game) => <Videogame 
+            game.map((game) => <Videogame
             genres={game.genres}
-            name={game.name} 
+            name={game.name}
             rating={game.rating}
             platforms={game.platforms}
             img={game.background_image}
             id={game.id}
             />)
-          } 
+          }
         </div>
       </>
     );
