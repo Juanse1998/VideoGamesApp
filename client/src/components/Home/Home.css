@@ -3,14 +3,14 @@
     width: 40%;
     height: 40%;
     padding-top: 4%;
-    color: rgb(155, 155, 240);
+    color: rgb(161 219 72);
 }
 
 h1 {
     width: 2em;
     font-size: 3em;
     -webkit-text-stroke: 2px black;
-    text-shadow: 0 1px 0 rgb(67, 5, 5), 
+    text-shadow: 0 1px 0 rgb(67, 5, 5),
     0 2px 0 #c9c9c9,
     0 3px 0 #bbb,
     0 4px 0 #b9b9b9,
