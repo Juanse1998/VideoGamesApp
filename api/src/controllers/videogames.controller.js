@@ -3,16 +3,18 @@ const fetch = require('node-fetch');
 const { Videogame, Gender} = require('../db');
 
 var id = 2000000;
-// Busco los detalles de un juego 
+// Busco los detalles de un juego
 const videogamedetails = (req, res) => {
     const id = req.params.id
+    console.log('aaaaaa', id)
     const genres = [];
     const juegos = [];
     const platforms = [];
     //const juego = await Videogame.findAll();
-    fetch(`https://api.rawg.io/api/games/${id}`)
+  fetch(`https://api.rawg.io/api/games/${id}`)
     .then(r => r.json()) //r.json())
     .then((recurso) =>  {
+      console.log('recursooo', recurso);
         recurso.genres.forEach(element => {
                 genres.push(element.name);
         });
@@ -28,6 +30,7 @@ const videogamedetails = (req, res) => {
             genres: genres,
             platforms: platforms
         }
+        console.log('detalles', detalles);
         juegos.push(detalles)
         res.status(200).send(juegos);
     });
@@ -43,7 +46,7 @@ const videogamesfilt = async (req, res) => {
         res.status(404).send({msg: 'Juego no encontrado'});
     } else {
         // Busco en la api si el parametro name coincide con algun juego
-        fetch(`https://api.rawg.io/api/games?key=5929a09e38154d2b8ef282a7f356fe59`)
+      fetch(`https://api.rawg.io/api/games?key=df9bdfd7f78f4e30862fd02a6dba39ed`)
         .then(r => r.json()) //r.json())
         .then((recurso) =>  {
             recurso.results.forEach(element => {
@@ -60,7 +63,7 @@ const videogamesfilt = async (req, res) => {
                             platforms: platforms,
                             background_image: element.background_image
                         }
-                        
+
                     resultado.push(juegofil);
                 }
                 });
@@ -85,7 +88,7 @@ const viewAllGames = async (req, res) => {
     const game = await Videogame.findAll({
         include: [{
             model: Gender
-        }] 
+        }]
     });
     game.forEach(element => {
         const juegoAux = {
@@ -98,7 +101,7 @@ const viewAllGames = async (req, res) => {
         }
         juegos.push(juegoAux)
     });
-    fetch(`https://api.rawg.io/api/games?key=5929a09e38154d2b8ef282a7f356fe59`)
+  fetch(`https://api.rawg.io/api/games?key=df9bdfd7f78f4e30862fd02a6dba39ed`)
     .then(r => r.json()) //r.json())
     .then((recurso) =>  {
         const next = recurso.next;
@@ -119,18 +122,18 @@ const viewAllGames = async (req, res) => {
                 platforms: platforms,
                 background_image: element.background_image
             }
-       
+
             juegos.push(juego);
-            
+
         });
         res.status(200).send(juegos);
-  
+
         // //Filtrar los primeros 15 juegos
         // const juegosTodos = [];
         // for (let i = 0; i < 15; i++) {
         //     juegosTodos.push(juegos[i]);
         // }
-        
+
      });
 }
 
@@ -148,7 +151,7 @@ const addGame = async (req, res) => {
     const platforms = req.body.platforms;
     const rating = req.body.rating;
 
-    
+
     if (!nombre ||  !platforms ) {
         res.status(400).send({ msg: 'Error algun dato no fue ingresado' });
     } else {
@@ -166,7 +169,7 @@ const addGame = async (req, res) => {
         //         });
         //     });
         //     res.status(200).send(game);
-        // }; 
+        // };
 
         //   if(generos.length > 1) {
         //     const g1 = await Gender.findAll({
@@ -174,7 +177,7 @@ const addGame = async (req, res) => {
         //             name: generos[0]
         //         }
         //     })
-            
+
         //     const g2 = await Gender.findAll({
         //         where: {
         //             name: generos[1]
@@ -198,7 +201,7 @@ const addGame = async (req, res) => {
         //                 name: generos[0]
         //             }
         //         })
-    
+
         //     const gen = await Gender.findAll({
         //             where: {
         //                     name: generos[1]
@@ -214,21 +217,21 @@ const addGame = async (req, res) => {
                         name: generos[0]
                     }
                 })
-    
+
                 await game.addGender(g1)
                 res.status(200).send(game);
         // }
 
 
-    } 
+    }
 }
-    
+
 
 const detailsGameDb = async (req, res) => {
     const game = await Videogame.findAll(   {
         include: [{
             model: Gender
-        }] 
+        }]
     });
     if (!game) {
         res.status(400).send("No hay juego cargados")

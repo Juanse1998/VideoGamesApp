@@ -1,11 +1,11 @@
 export async function getAllGames() {
-    const response = await  fetch(`/videogames`)
+    const response = await fetch(`/videogames`)
     const responseJson = await response.json()
     return responseJson
 }
 
 export async function filtGames(name) {
-    const response = await  fetch(`/videogames/${name}`)
+    const response = await fetch(`/videogames/${name}`)
     const responseJson = await response.json()
     return responseJson
 }
@@ -22,20 +22,14 @@ export async function gameDb() {
     return responseJson
 }
 
-
 export async function detailsGame(id) {
-    const response = await  fetch(`/videogame/${id}`)
+    const response = await fetch(`/videogame/${id}`)
     const responseJson = await response.json()
-    return (responseJson)
+    return responseJson
 }
-
-
-
-
 
 export default {
     getAllGames,
     filtGames,
-
     detailsGame
 }

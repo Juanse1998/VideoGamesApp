@@ -1,15 +1,21 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import {gameDb} from '../../services/games'
+import {detailsGame} from '../../services/games'
+
 import './Details.css'
 
-export default function Details({id})  {
+export default function Details()  {
   const [game, setGame] = useState(null)
   const [gamedb, setGamedb] = useState(null)
   const games = [];
+  const {id} = useParams();
 
   useEffect(async ()  => {
     fetch(`/videogame/${id}`)
-        .then(response => response.json())
+        .then(response =>
+          { console.log(response)
+            response.json()})
         .then((data) => setGame({...data}));
     const a = gameDb();
     setGamedb(a)

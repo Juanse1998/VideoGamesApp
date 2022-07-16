@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 export default function Videogame ({id, genres, name, img }) {
   const generos = [];
   const auxgeneros = "";
-  // {
-  //   if(!name) {
-  //     return "Loading..."
-  //   }
-  // }
+  {
+    if(!name) {
+      return "Loading..."
+    }
+  }
     return (
       <>
       {genres.forEach(elem => generos.push(elem.name))}
@@ -33,7 +33,7 @@ export default function Videogame ({id, genres, name, img }) {
              <div className="desplegable">
               <div className="links">
               <Link className="buttonDetail" to={`/videogame/${id}`}>Detalles</Link>
-              {/* < Details id={id}/> */}
+              {/* <Details className="buttonDetail" href={`/videogame/${id}`} id={id}/> */}
               </div>
             </div>
           </div>

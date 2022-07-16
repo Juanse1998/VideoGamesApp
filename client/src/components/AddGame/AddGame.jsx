@@ -42,11 +42,11 @@ class AddGame extends React.Component {
           <form className="inputs" onSubmit={this.handleSubmit}>
             <div className="name">
               <b>Nombre:</b>
-              <input type="text" style={{marginLeft: '116px'}}className="addGameInputs" name="name" value={name} onChange={this.handleChange} />
+              <input type="text" style={{marginLeft: '122px'}}className="addGameInputs" name="name" value={name} onChange={this.handleChange} />
             </div>
             <div className="name">
               <b>Descripcion:</b>
-              <input type="text" style={{marginLeft: '71px'}}className="addGameInputs" name="description" value={description} onChange={this.handleChange} />
+              <input type="text" style={{marginLeft: '94px'}}className="addGameInputs" name="description" value={description} onChange={this.handleChange} />
             </div>
             <div className="name">
               <b>Fecha de Lanzamiento:</b>
@@ -54,11 +54,11 @@ class AddGame extends React.Component {
             </div>
             <div className="name">
               <b>Generos:</b>
-              <input type="text" style={{marginLeft: '105px'}}className="addGameInputs" name="genres" value={genres} onChange={this.handleChange} />
+              <input type="text" style={{marginLeft: '120px'}}className="addGameInputs" name="genres" value={genres} onChange={this.handleChange} />
             </div>
             <div className="name">
               <b>Plataformas:</b>
-              <input type="text" style={{marginLeft: '68px'}} className="addGameInputs" name="platforms" value={platforms} onChange={this.handleChange} />
+              <input type="text" style={{marginLeft: '90px'}} className="addGameInputs" name="platforms" value={platforms} onChange={this.handleChange} />
             </div>
             <div style={{textAlign: 'center'}}>
               <button className="buttons" type="submit"> Agregar </button>
